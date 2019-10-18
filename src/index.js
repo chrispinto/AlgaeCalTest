@@ -21,3 +21,15 @@ _wq.push({
     });
   },
 });
+// Hiding percent off bubble if the value is 0%
+const amounts = document.getElementsByClassName('amount');
+// eslint-disable-next-line no-plusplus
+for (let x = 0; x < amounts.length; x++) {
+  const amount = amounts[x];
+  const content = amount.innerHTML.trim();
+
+  // eslint-disable-next-line eqeqeq
+  if (content == '0%') {
+    document.querySelector('.percent-off').style.display = 'none';
+  }
+}
