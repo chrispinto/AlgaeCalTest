@@ -69,6 +69,10 @@ $screen-xs-max: $screen-xs -1 !default;
     margin-top:-60px;
     width:auto;
   }
+  .product-image{
+    //Changing to allow percent off be absolute positioned
+    position: relative;
+  }
   .product-image img{
     height:auto;
     display:block;
@@ -153,8 +157,8 @@ $screen-xs-max: $screen-xs -1 !default;
       width: 70px;
       border-radius:200px;
       position:absolute;
-      top:-20px;
-      right:34px;
+      top: 10px; //Changed position to be in correct place
+      right:25%;
       box-shadow: -1px 0px 13px 0px rgba(100,100,100,0.75);
 
       .label {
@@ -167,8 +171,9 @@ $screen-xs-max: $screen-xs -1 !default;
       }
 
       @media screen and (max-width: $screen-sm-max){
-        top: -46px;
-        right: 67px;
+        //Fixing percent off positioning on mobile
+        //top: -46px;
+        //right: 67px;
       }
       @media screen and (max-width: $screen-xs-max){
         top: -60px;
@@ -184,8 +189,9 @@ $screen-xs-max: $screen-xs -1 !default;
 
   .most-popular{
     .percent-off{
-      top:-61px;
-      right:14px;
+      //This class is making the percent off bubble of the 3rd bundle incorrectly positioned
+      //top:-61px;
+      //right:14px;
     }
   }
 }
@@ -203,7 +209,7 @@ $screen-xs-max: $screen-xs -1 !default;
     }
     .most-popular .percent-off{
       left:50%;
-      transform:translate(220%);
+      //transform:translate(220%); 
     }
   }
 }
@@ -217,14 +223,15 @@ $screen-xs-max: $screen-xs -1 !default;
     margin: auto !important;
     .percent-off {
       left: 50%;
-      transform: translateX(220%);
+      transform: translateX(70%); // Fixing mobile positioning for percent off bubble
     }
   }
 }
 
 @media screen and (max-width:450px){
   .product-box-wrapper .percent-off {
-    transform: translateX(135%) !important;
+    //Fixing mobile positioning of percent off bubble
+    //transform: translateX(135%) !important;
   }
 }
 
