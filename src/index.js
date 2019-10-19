@@ -7,6 +7,7 @@ import 'bootstrap';
 document.addEventListener('DOMContentLoaded', () => {
   loadSVGs();
 });
+
 // Getting the video to play function
 // eslint-disable-next-line no-underscore-dangle
 window._wq = window._wq || [];
@@ -21,7 +22,8 @@ _wq.push({
     });
   },
 });
-// Hiding percent off bubble if the value is 0%
+
+// Hiding the percent off bubble if the value is 0%
 const amounts = document.getElementsByClassName('amount');
 // eslint-disable-next-line no-plusplus
 for (let x = 0; x < amounts.length; x++) {
