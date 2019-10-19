@@ -70,7 +70,7 @@ $screen-xs-max: $screen-xs -1 !default;
     width:auto;
   }
   .product-image{
-    //Changing to allow percent off be absolute positioned
+    //Changing to allow percent off bubbles be absolute positioned
     position: relative;
   }
   .product-image img{
@@ -227,7 +227,7 @@ $screen-xs-max: $screen-xs -1 !default;
     margin: auto !important;
     .percent-off {
       left: 50%;
-      transform: translateX(70%); // Fixing mobile positioning for percent off bubble
+      transform: translateX(70%); 
     }
   }
 }
