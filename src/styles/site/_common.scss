@@ -611,9 +611,18 @@ a.read-more{
   padding-right: 0 !important;
 }
 .guaranteed-seal{
-  height: 145px;
-  width: 145px;
+ // height: 145px;
+  width: 80%;
 }
 .para{
   font-size: 1.0rem;
+}
+.dean-face{
+ // height: 90%;
+  width: 90%;
+}
+@media screen and (max-width:450px){
+  .dean-face {
+    width:100%
+  }
 }
