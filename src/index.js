@@ -58,3 +58,24 @@ function loadOptions() {
   };
   xhr.send();
 }
+
+// Utilizing the LuxonJS library to hide Speak to our Specialists when office is closed
+const today = DateTime.local(); // Gets user's current time
+const local = today.setZone('America/Vancouver'); // Converts user's current time to Vancouver's timezone
+const time = local.get('hour'); // Gets the hour from the newly created time instance
+const day = local.get('weekday'); // Gets the weekday from the current time instance
+
+// If it is before 6am or after 4pm Monday - Friday hide speak to our specalists
+if (day < 6) {
+  if (time < 6 || time >= 16) {
+    const speak = document.querySelector('.speak-to-our-bone-specialists').classList;
+    speak.remove('d-md-block');
+  }
+}
+// If it is before 7am or after 5pm on Saturday or Sunday hide speak to our specalists
+if (day >= 6) {
+  if (time < 7 || time >= 17) {
+    const speak = document.querySelector('.speak-to-our-bone-specialists').classList;
+    speak.remove('d-md-block');
+  }
+}
