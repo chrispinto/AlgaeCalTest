@@ -606,3 +606,14 @@ a.read-more{
 .sticky-body-cta{
   padding-bottom: 5.5rem!important;
 }
+.no-p{
+  //Adding no right padding for guarantee section
+  padding-right: 0 !important;
+}
+.guaranteed-seal{
+  height: 145px;
+  width: 145px;
+}
+.para{
+  font-size: 1.0rem;
+}
