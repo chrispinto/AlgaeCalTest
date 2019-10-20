@@ -1,3 +1,5 @@
+/* eslint-disable no-underscore-dangle */
+/* eslint-disable arrow-parens */
 // import {ProductBundles} from "./modules/ProductBundles";
 import { DateTime } from 'luxon';
 import './styles/main.scss';
@@ -8,9 +10,7 @@ import 'bootstrap';
 document.addEventListener('DOMContentLoaded', () => {
   loadSVGs();
 });
-
 // Getting the video to play function
-// eslint-disable-next-line no-underscore-dangle
 window._wq = window._wq || [];
 // eslint-disable-next-line no-undef
 _wq.push({
@@ -24,7 +24,7 @@ _wq.push({
   },
 });
 
-// Hiding the percent off bubble if the value is 0%
+// Hiding the percent off bubble if it is 0%
 const amounts = document.getElementsByClassName('amount');
 
 for (let x = 0; x < amounts.length; x += 1) {
@@ -36,27 +36,18 @@ for (let x = 0; x < amounts.length; x += 1) {
   }
 }
 
-// Load Guarantee Modal on Click with Ajax content
-// eslint-disable-next-line no-use-before-define
-document.getElementById('month-modal').addEventListener('click', loadOptions);
-function loadOptions() {
-  const xhr = new XMLHttpRequest();
-  xhr.open('GET', 'https://www.algaecal.com/wp-json/acf/v3/options/options', true);
-
-  // eslint-disable-next-line func-names
-  xhr.onload = function () {
-    if (this.status === 200) {
-      const options = JSON.parse(this.responseText);
-      const guarantee = options.acf;
-
+// Load the 7 Month Guarantee Modal on Click with the acf ajax content
+function getGuarantee() {
+  fetch('https://www.algaecal.com/wp-json/acf/v3/options/options')
+    .then(response => response.json())
+    .then(response => {
+      const guarantee = response.acf;
       document.getElementById('guarantee-modal-body').innerHTML = guarantee['7yr_full_copy'];
-
-      // Image being pulled in was larger than modal width, so I added the img-fluid class
+      // Image being pulled in was larger than modal width, adding the img-fluid class
       document.querySelector('.wp-image-62567').classList.add('img-fluid');
-    }
-  };
-  xhr.send();
+    });
 }
+document.getElementById('month-modal').addEventListener('click', getGuarantee);
 
 // Utilizing the LuxonJS library to hide Speak to our Specialists when office is closed
 const today = DateTime.local(); // Gets user's current time
