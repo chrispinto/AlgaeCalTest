@@ -1,3 +1,12 @@
+@media screen and (max-width:450px){
+  .dean-face {
+    width:100%
+  }
+  .para{
+    font-size: 0.5rem !important;
+  }
+}
+
 header{
   a.phone-number{
     text-decoration:none;
@@ -607,22 +616,14 @@ a.read-more{
   padding-bottom: 5.5rem!important;
 }
 .no-p{
-  //Adding no right padding for guarantee section
   padding-right: 0 !important;
 }
 .guaranteed-seal{
- // height: 145px;
   width: 80%;
 }
 .para{
   font-size: 1.0rem;
 }
 .dean-face{
- // height: 90%;
   width: 90%;
-}
-@media screen and (max-width:450px){
-  .dean-face {
-    width:100%
-  }
 }

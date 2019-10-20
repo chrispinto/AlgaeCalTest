@@ -10,15 +10,16 @@ import 'bootstrap';
 document.addEventListener('DOMContentLoaded', () => {
   loadSVGs();
 });
-// Getting the video to play function
+
+// Getting the video to play while hiding the overlay image using found "vertical-wipe" SCSS class
 window._wq = window._wq || [];
 // eslint-disable-next-line no-undef
 _wq.push({
   id: 'zwflowymel',
   onReady(video) {
     document.getElementById('play-button-overlay-zwflowymel').addEventListener('click', () => {
-    // Once video is loaded and overlay image is clicked, remove the overlay image
-      document.getElementById('play-button-overlay-zwflowymel').remove();
+      const image = document.getElementById('play-button-overlay-zwflowymel').classList;
+      image.add('vertical-wipe');
       video.play();
     });
   },
@@ -36,7 +37,7 @@ for (let x = 0; x < amounts.length; x += 1) {
   }
 }
 
-// Load the 7 Month Guarantee Modal on Click with the acf ajax content
+// Loading the 7 Month Guarantee Modal on click using Fetch API with the acf content
 function getGuarantee() {
   fetch('https://www.algaecal.com/wp-json/acf/v3/options/options')
     .then(response => response.json())
